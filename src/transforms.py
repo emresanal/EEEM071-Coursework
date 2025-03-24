@@ -149,15 +149,15 @@ def build_transforms(
         ]
     transform_train += [T.ToTensor()]
     if color_aug:
-        transform_train += [ColorAugmentation()]
+        transform_train += [ColorAugmentation()] # Color augmentation
     transform_train += [normalize]
     if random_erase:
-        transform_train += [RandomErasing()]
-    transform_train = T.Compose(transform_train)
+        transform_train += [RandomErasing()]  # Random erasing
     if use_crop:
         transform_train += [T.RandomResizedCrop(height, scale=(0.8, 1.0))]  # Random cropping
     if use_blur:
         transform_train += [T.GaussianBlur(kernel_size=5)]  # Gaussian blur
+    transform_train = T.Compose(transform_train)
 
     # build test transformations
     transform_test = T.Compose(
