@@ -49,8 +49,8 @@ def main():
     log_name = "log_test.txt" if args.evaluate else "log_train.txt"
     sys.stdout = Logger(osp.join(args.save_dir, log_name))
     print("==========")
-    student_id = os.environ.get('STUDENT_ID', '<your id>')
-    student_name = os.environ.get('STUDENT_NAME', '<your name>')
+    student_id = os.environ.get('STUDENT_ID', '6877885')
+    student_name = os.environ.get('STUDENT_NAME', 'Kaan Emre Sanal')
     print("Student ID:{}".format(student_id))
     print("Student name:{}".format(student_name))
     print("UUID:{}".format(uuid.uuid4()))
