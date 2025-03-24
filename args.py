@@ -68,6 +68,16 @@ def argument_parser():
         action="store_true",
         help="randomly alter the intensities of RGB channels",
     )
+    parser.add_argument(
+        "--use-crop",
+        action="store_true",
+        help="enable random cropping augmentation",
+    )
+    parser.add_argument(
+        "--use-blur",
+        action="store_true",
+        help="enable Gaussian blur augmentation",
+    )
 
     # ************************************************************
     # Optimization options
