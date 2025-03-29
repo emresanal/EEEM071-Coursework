@@ -156,17 +156,17 @@ def main():
                 galleryloader = testloader_dict[name]["gallery"]
                 rank1 = test(model, queryloader, galleryloader, use_gpu)
                 ranklogger.write(name, epoch + 1, rank1)
-
-            save_checkpoint(
-                {
-                    "state_dict": model.state_dict(),
-                    "rank1": rank1,
-                    "epoch": epoch + 1,
-                    "arch": args.arch,
-                    "optimizer": optimizer.state_dict(),
-                },
-                args.save_dir,
-            )
+                
+                # save_checkpoint(
+                #     {
+                #         "state_dict": model.state_dict(),
+                #         "rank1": rank1,
+                #         "epoch": epoch + 1,
+                #         "arch": args.arch,
+                #         "optimizer": optimizer.state_dict(),
+                #     },
+                #     args.save_dir,
+                # )
 
     elapsed = round(time.time() - time_start)
     elapsed = str(datetime.timedelta(seconds=elapsed))
